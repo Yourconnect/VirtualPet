@@ -3,7 +3,74 @@ using Xunit;
 
 namespace VirtualPet.Tests
 {
-    public class PetTests
+    static void Main(string[] args)
+    {
+        bool keepThinking = true;
+        while (keepThinking)
+        {
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("1.");
+            Console.WriteLine("2.");
+            Console.WriteLine("3.");
+            Console.WriteLine("4.");
+            Console.WriteLine("5.");
+            Console.WriteLine("6.");
+            Console.WriteLine("7.");
+            Console.WriteLine("8.");
+            Console.WriteLine("9.");
+            Console.WriteLine("10.");
+            Console.WriteLine("11.");
+            Console.WriteLine("Press Q to quit");
+
+            string userChoice = Console.ReadLine().ToLower();
+
+            switch (userChoice)
+            {
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case "4":
+
+                    break;
+                case "5":
+
+                    break;
+                case "6":
+
+                    break;
+                case "7":
+
+                    break;
+                case "8":
+
+                    break;
+                case "9":
+
+                    break;
+                case "10":
+
+                    break;
+                case "11":
+
+                    break;
+                case "q":
+                    keepThinking = false;
+                    Console.WriteLine("Good bye!");
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+public class PetTests
     {
         private Pet testPet;
 
