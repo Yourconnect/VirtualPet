@@ -18,8 +18,33 @@ namespace VirtualPet
         //public int SeeDoctor { get; set; }
         //public int Play { get; set; }
 
+        public void Play()
+        {
+            Hunger += 5;
+            Boredom -= 5;
+            
+        }
+        public void Feed()
+        {
+            Hunger -= 5;
+            Health += 10;
+        }
+        public void Doctor()
+        {
+            Hunger = 50;
+            Boredom = 50;
+            Health = 100;
+        }
+        public void Print()
+        {
+            Console.WriteLine("Name: " + Name);
+            Console.WriteLine("");
+        }
+
+
         public Pet()
         {
+            
             Hunger = 50;
             Boredom = 50;
             Health = 100;
