@@ -40,15 +40,7 @@ namespace VirtualPet
             Console.WriteLine("Name: " + Name);
             Console.WriteLine("");
         }
-
-
-        public Pet()
-        {
-          
-
-        }
-
-        public Pet(string name, string species)
+       public Pet(string name, string species)
         {
             Name = name;
             Species = species;
