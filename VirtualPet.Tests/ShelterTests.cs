@@ -1,5 +1,6 @@
 ﻿using System;
 using Xunit;
+using System.Collections.Generic;
 
 
 namespace VirtualPet.Tests
@@ -11,10 +12,11 @@ namespace VirtualPet.Tests
         {
             //Arrange
             Shelter shelter = new Shelter();
+            Pet myPet = new Pet("Gavin","Pokemon");
             //Act
-
+            shelter.AddPet(myPet);
             //Assert
-            Assert.Equal(ListOfPets, shelter.GetName);
+            Assert.Contains(myPet, shelter.ListOfPets);
         }
 
     }

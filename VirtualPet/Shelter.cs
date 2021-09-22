@@ -9,12 +9,16 @@ namespace VirtualPet
     public class Shelter
     {
         public List<Pet> ListOfPets = new List<Pet>();
-        public void Pets_In_Shelter()
+        public void PetsInShelter()
         {
             foreach(Pet MyPet in ListOfPets)
             {
                 Console.WriteLine(MyPet.Name);
             }
+        }
+        public void AddPet(Pet o)
+        {
+            ListOfPets.Add(o);
         }
     }
 }
