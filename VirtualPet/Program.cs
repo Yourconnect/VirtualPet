@@ -33,7 +33,7 @@ namespace VirtualPet
                         
                         break;
                     case "2":
-                       // GetStatus();
+                        MyPet.GetStatus();
                         
 
                         break;
@@ -63,18 +63,8 @@ namespace VirtualPet
                 Console.WriteLine("What is the name of your pet?");
                 string Name = Console.ReadLine();
                 return new Pet(Species, Name);
-            }   
-            
-            //static void PrintStatus()
-            //{
-
-            //    Console.Clear();
-            //    Console.WriteLine("Hunger: "+ MyPet.Hunger);
-            //    Console.WriteLine("Boredom: "+ MyPet.Boredom);
-            //    Console.WriteLine("Health: "+ MyPet.Health);
-            //    Console.Read();
-
             }
+
 
 
 
@@ -102,33 +92,46 @@ namespace VirtualPet
             static void PetInteractions()
             {
                 Console.WriteLine("How would you like to interact with a pet today? ");
-                Console.WriteLine("Enter 1 to play with the pet \n Enter 2 to feed the pet \n Enter 3 to take the pet to the doctor");
+                Console.WriteLine("Enter 1 to play with the pet \nEnter 2 to feed the pet \nEnter 3 to take the pet to the doctor");
                 int choice = Convert.ToInt32(Console.ReadLine());
 
             if (choice == 1)
             {
                 Console.WriteLine(MyPet.Name + " is " + MyPet.Boredom + "% bored");
 
-                //MyPet.Play;
+                MyPet.Play();
 
                 Console.WriteLine(MyPet.Name + " is playing");
-
-                Console.WriteLine(MyPet.Name + "is now " + MyPet.Boredom + "% bored");
+                Console.WriteLine(MyPet.Name + " is now " + MyPet.Boredom + "% bored");
+                    Console.Read();
 
             }
             else if (choice == 2)
             {
-                //MyPet.Feed;
+                Console.WriteLine(MyPet.Name + " is " + MyPet.Hunger + "% hungry");
+
+                MyPet.Feed();
+
+                Console.WriteLine(MyPet.Name + " is eating");
+                Console.WriteLine(MyPet.Name + " is now " + MyPet.Hunger + "% hungry");
+                    Console.Read();
+
             }
             else if (choice == 3)
             {
-                //MyPet.Doctor
+                Console.WriteLine(MyPet.Name + " is " + MyPet.Health + "% healthy");
 
-                Console.WriteLine(");
+                MyPet.Doctor();
+
+                Console.WriteLine(MyPet.Name + " is getting checked out");
+                Console.WriteLine(MyPet.Name + " is now " + MyPet.Health + "% healthy");
+                    Console.Read();
+
             }
             else
             {
                 Console.WriteLine("Please choose option 1, 2 or 3");
+                    Console.Read();
             }
 
 

@@ -31,9 +31,15 @@ namespace VirtualPet
         }
         public void Doctor()
         {
-            Hunger = 50;
-            Boredom = 50;
-            Health = 100;
+            if (Health <= 80)
+            {
+                Health += 20;
+            }
+            else if (Health > 80)
+            {
+                Health = 100;
+            }
+
         }
         public void Print()
         {
@@ -70,7 +76,11 @@ namespace VirtualPet
         }
         public void GetStatus()
         {
-            Console.WriteLine("Hunger:" + Hunger + "Boredom:" + Boredom + "Health:" + Health);
+            Console.WriteLine("Hunger: " + Hunger);
+            Console.WriteLine("Boredom: " + Boredom);
+            Console.WriteLine("Health: " + Health);
+
+            Console.Read();
         }
     }
 }
