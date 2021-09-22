@@ -44,10 +44,7 @@ namespace VirtualPet
 
         public Pet()
         {
-            
-            Hunger = 50;
-            Boredom = 50;
-            Health = 100;
+          
 
         }
 
@@ -55,7 +52,9 @@ namespace VirtualPet
         {
             Name = name;
             Species = species;
-
+            Hunger = 50;
+            Boredom = 50;
+            Health = 100;
         }
 
         public void SetName(string name)
@@ -76,6 +75,10 @@ namespace VirtualPet
         public string GetSpecies()
         {
             return Species;
+        }
+        public void GetStatus()
+        {
+            Console.WriteLine("Hunger:" + Hunger + "Boredom:" + Boredom + "Health:" + Health);
         }
     }
 }
