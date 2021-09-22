@@ -4,36 +4,37 @@ namespace VirtualPet
 {
     class Program
     {
+        public static Pet MyPet;
         static void Main(string[] args)
         {
-            bool keepThinking = true;
-            while (keepThinking)
+            
+            Console.WriteLine("Welcome to the Shelter!");
+            bool Menu = true;
+
+            while (Menu)
             {
                 Console.Clear();
-                Console.WriteLine("Welcome to the shelter");
-                Console.WriteLine("Would you like to play? ");
+                Console.WriteLine("How can we help you today?");
                 Console.WriteLine("Please select one of the following: ");
-                Console.WriteLine("1.Check in a pet");
-                Console.WriteLine("2.Play with a animal");
-                Console.WriteLine("3.Adopt an animal");
-                Console.WriteLine("4.Feed an animal");
-                Console.WriteLine("5.Take an animal to the vet");
-                Console.WriteLine("6.");
-                Console.WriteLine("7.");
-                Console.WriteLine("8.");
-                Console.WriteLine("9.");
-                Console.WriteLine("10.");
-                Console.WriteLine("11.");
-                Console.WriteLine("Press Q to quit");
+                Console.WriteLine("1.Admit a pet");
+                Console.WriteLine("2.Check status of a pet");
+                Console.WriteLine("3.Interact with a pet");
+                Console.WriteLine("4.Adopt a pet");
+                Console.WriteLine("5.Leave the shelter");
 
-                string userChoice = Console.ReadLine().ToLower();
 
-                switch (userChoice)
+
+                string menuChoice = Console.ReadLine();
+
+                switch (menuChoice)
                 {
                     case "1":
-
+                        MyPet=NewPet();
+                        
                         break;
                     case "2":
+                        PrintStatus();
+                        
 
                         break;
                     case "3":
@@ -45,32 +46,35 @@ namespace VirtualPet
                     case "5":
 
                         break;
-                    case "6":
-
-                        break;
-                    case "7":
-
-                        break;
-                    case "8":
-
-                        break;
-                    case "9":
-
-                        break;
-                    case "10":
-
-                        break;
-                    case "11":
-
-                        break;
-                    case "q":
-                        keepThinking = false;
-                        Console.WriteLine("Aww that sucks :( Good bye then!");
+                    
+                        Menu = false;
+                        Console.WriteLine("Thanks for visiting the shelter");
                         break;
                     default:
                         break;
                 }
             }
+            
+            static Pet NewPet()
+            {
+                Console.WriteLine("What species is your pet?");
+                string Species = Console.ReadLine();
+                Console.WriteLine("What is the name of your pet?");
+                string Name = Console.ReadLine();
+                return new Pet(Species, Name);
+            }   
+            
+            static void PrintStatus()
+            {
+                Console.WriteLine("Hunger: "+ MyPet.Hunger);
+                Console.WriteLine("Boredom: "+ MyPet.Boredom);
+                Console.WriteLine("Health: "+ MyPet.Health);
+                Console.Read();
+
+            }
+
+            
+           
         }
     }
 }
