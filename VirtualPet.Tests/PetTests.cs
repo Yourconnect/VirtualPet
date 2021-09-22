@@ -9,7 +9,7 @@ namespace VirtualPet.Tests
 
         public PetTests()
         {
-            testPet = new Pet();
+            testPet = new Pet("Species","Name");
         }
 
         [Fact]
