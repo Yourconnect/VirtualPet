@@ -4,73 +4,138 @@ namespace VirtualPet
 {
     class Program
     {
+        public static Pet MyPet;
         static void Main(string[] args)
         {
-            bool keepThinking = true;
-            while (keepThinking)
+            
+            Console.WriteLine("Welcome to the Shelter!");
+            bool Menu = true;
+
+            while (Menu)
             {
                 Console.Clear();
-                Console.WriteLine("Welcome to the shelter");
-                Console.WriteLine("Would you like to play? ");
+                Console.WriteLine("How can we help you today?");
                 Console.WriteLine("Please select one of the following: ");
-                Console.WriteLine("1.Check in a pet");
-                Console.WriteLine("2.Play with a animal");
-                Console.WriteLine("3.Adopt an animal");
-                Console.WriteLine("4.Feed an animal");
-                Console.WriteLine("5.Take an animal to the vet");
-                Console.WriteLine("6.");
-                Console.WriteLine("7.");
-                Console.WriteLine("8.");
-                Console.WriteLine("9.");
-                Console.WriteLine("10.");
-                Console.WriteLine("11.");
-                Console.WriteLine("Press Q to quit");
+                Console.WriteLine("1.Admit a pet");
+                Console.WriteLine("2.Check status of a pet");
+                Console.WriteLine("3.Interact with a pet");
+                Console.WriteLine("4.Adopt a pet");
+                Console.WriteLine("5.Leave the shelter");
 
-                string userChoice = Console.ReadLine().ToLower();
 
-                switch (userChoice)
+
+                string menuChoice = Console.ReadLine();
+
+                switch (menuChoice)
                 {
                     case "1":
-
+                        MyPet=NewPet();
+                        
                         break;
                     case "2":
+                       // GetStatus();
+                        
 
                         break;
                     case "3":
-
+                        PetInteractions();
                         break;
                     case "4":
+                        AdoptPet();
 
                         break;
                     case "5":
 
                         break;
-                    case "6":
-
-                        break;
-                    case "7":
-
-                        break;
-                    case "8":
-
-                        break;
-                    case "9":
-
-                        break;
-                    case "10":
-
-                        break;
-                    case "11":
-
-                        break;
-                    case "q":
-                        keepThinking = false;
-                        Console.WriteLine("Aww that sucks :( Good bye then!");
+                    
+                        Menu = false;
+                        Console.WriteLine("Thanks for visiting the shelter");
                         break;
                     default:
                         break;
                 }
             }
+            
+            static Pet NewPet()
+            {
+                Console.WriteLine("What species is your pet?");
+                string Species = Console.ReadLine();
+                Console.WriteLine("What is the name of your pet?");
+                string Name = Console.ReadLine();
+                return new Pet(Species, Name);
+            }   
+            
+            //static void PrintStatus()
+            //{
+
+            //    Console.Clear();
+            //    Console.WriteLine("Hunger: "+ MyPet.Hunger);
+            //    Console.WriteLine("Boredom: "+ MyPet.Boredom);
+            //    Console.WriteLine("Health: "+ MyPet.Health);
+            //    Console.Read();
+
+            }
+
+
+
+            static void AdoptPet()
+            {
+                Console.WriteLine("Would you like to adopt " + MyPet + "?");
+                Console.WriteLine("Yes or No?");
+
+                string choice = Console.ReadLine().ToLower();
+                if (choice == "yes")
+                {
+                    //MyPet.Remove();?? remove from pet list in shelter
+                    Console.WriteLine("Enjoy your new pet!");
+                }
+                else
+                {
+                    Console.WriteLine("Come back when you want to save a helpless animal");
+                }
+
+                Console.Read();
+                
+
+            }
+
+            static void PetInteractions()
+            {
+                Console.WriteLine("How would you like to interact with a pet today? ");
+                Console.WriteLine("Enter 1 to play with the pet \n Enter 2 to feed the pet \n Enter 3 to take the pet to the doctor");
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                Console.WriteLine(MyPet.Name + " is " + MyPet.Boredom + "% bored");
+
+                //MyPet.Play;
+
+                Console.WriteLine(MyPet.Name + " is playing");
+
+                Console.WriteLine(MyPet.Name + "is now " + MyPet.Boredom + "% bored");
+
+            }
+            else if (choice == 2)
+            {
+                //MyPet.Feed;
+            }
+            else if (choice == 3)
+            {
+                //MyPet.Doctor
+
+                Console.WriteLine(");
+            }
+            else
+            {
+                Console.WriteLine("Please choose option 1, 2 or 3");
+            }
+
+
+               
+
+            }
+           
         }
     }
 }
