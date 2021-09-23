@@ -19,6 +19,12 @@ namespace VirtualPet
         public void AddPet(Pet o)
         {
             ListOfPets.Add(o);
+            
+        }
+        public void AdoptPet(Pet o)
+        {
+            ListOfPets.Remove(o);
+            
         }
     }
 }

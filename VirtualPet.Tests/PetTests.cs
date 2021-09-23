@@ -11,7 +11,23 @@ namespace VirtualPet.Tests
         {
             testPet = new Pet("Species","Name");
         }
+        [Fact]
+        public void Play_Should_Decrease_Boredom_Increase_Hunger()
+        {
+            //Arrange
+            Pet pet = new Pet("Davis", "Cat");
+            pet.Play();            
 
+            //Act
+
+            //Assert
+            //In the parenthesis we need two things.
+            //One is what we expect the answer to be 
+            //Two is the value we are actually getting
+            Assert.Equal(45, pet.Boredom);
+            //Boredom is a property because it doesnt have parenthesis vs a method that does have them
+            Assert.Equal(55, pet.Hunger);
+        }
         [Fact]
         public void Pet_Constructor_Should_Instantiate_Pet_Object()
         {
