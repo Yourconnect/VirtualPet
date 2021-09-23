@@ -8,8 +8,6 @@ namespace VirtualPet
 {
    public class Robot : Pet
     {
-        public string Fly { get; set; }
-
         public void Fly()
         {
             Hunger += 5;
