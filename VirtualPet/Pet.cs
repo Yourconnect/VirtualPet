@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace VirtualPet
-{ 
+{
     public class Pet
     {
 
@@ -22,7 +22,7 @@ namespace VirtualPet
         {
             Hunger += 5;
             Boredom -= 5;
-            
+
         }
         public void Feed()
         {
@@ -40,7 +40,7 @@ namespace VirtualPet
             Console.WriteLine("Name: " + Name);
             Console.WriteLine("");
         }
-       public Pet(string name, string species)
+        public Pet(string name, string species)
         {
             Name = name;
             Species = species;
@@ -71,6 +71,29 @@ namespace VirtualPet
         public void GetStatus()
         {
             Console.WriteLine("Hunger:" + Hunger + "Boredom:" + Boredom + "Health:" + Health);
+        }    
+        public int GetHunger()
+        {
+          return Hunger;
         }
+        public int GetBoredom()
+        {
+            return Boredom;
+        }
+        public int GetHealth()
+        {
+            return Health;
+        }
+        public void FeedDecreaseHunger()
+        {
+            int Hunger = 50;
+           public void Feed()
+            {
+                Hunger -= 40;
+            }
+
+            
+        }
+
     }
 }
