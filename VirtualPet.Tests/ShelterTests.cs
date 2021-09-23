@@ -38,6 +38,8 @@ namespace VirtualPet.Tests
             //One is what we expect the answer to be 
             //Two is the value we are actually getting
         }
+
+        [Fact]
         public void AdoptPet_Should_Decrease_List_Length_By_One()
         {
             Shelter shelter = new Shelter();

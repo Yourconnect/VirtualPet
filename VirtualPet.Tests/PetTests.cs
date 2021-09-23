@@ -49,9 +49,10 @@ namespace VirtualPet.Tests
         [Fact]
         public void SetName_Should_Assign_Pet_Name_Property()
         {
-            // testPet.Name("Fluffy");
+            Pet pet = new Pet("Name", "Species");
+             testPet.SetName("Fluffy");
 
-            // Assert.Equal("Fluffy", testPet.Name);
+            Assert.Equal("Fluffy", testPet.Name);
         }
 
         [Fact]
