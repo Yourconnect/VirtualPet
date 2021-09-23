@@ -24,6 +24,7 @@ namespace VirtualPet
                 Console.Clear();
                 Console.WriteLine("How can we help you today?");
                 Console.WriteLine("Please select one of the following: ");
+
                 Console.WriteLine("1.Admit a pet");
                 Console.WriteLine("2.Check status of a pet");
                 Console.WriteLine("3.Interact with a pet");

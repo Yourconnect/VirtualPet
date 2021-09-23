@@ -9,9 +9,25 @@ namespace VirtualPet.Tests
 
         public PetTests()
         {
-            testPet = new Pet();
+            testPet = new Pet("Species","Name");
         }
+        [Fact]
+        public void Play_Should_Decrease_Boredom_Increase_Hunger()
+        {
+            //Arrange
+            Pet pet = new Pet("Davis", "Cat");
+            pet.Play();            
 
+            //Act
+
+            //Assert
+            //In the parenthesis we need two things.
+            //One is what we expect the answer to be 
+            //Two is the value we are actually getting
+            Assert.Equal(45, pet.Boredom);
+            //Boredom is a property because it doesnt have parenthesis vs a method that does have them
+            Assert.Equal(55, pet.Hunger);
+        }
         [Fact]
         public void Pet_Constructor_Should_Instantiate_Pet_Object()
         {
@@ -33,6 +49,9 @@ namespace VirtualPet.Tests
         [Fact]
         public void SetName_Should_Assign_Pet_Name_Property()
         {
+
+            Pet pet = new Pet("Name", "Species");
+
             testPet.SetName("Fluffy");
 
             Assert.Equal("Fluffy", testPet.Name);
@@ -83,11 +102,13 @@ namespace VirtualPet.Tests
         }
 
         [Fact]
-        public void GetHunger_Should_Return_Initial_Hunger_Level_Of_50()
+        public void GetHunger_Initial_Hunger_Level_Of_50()
         {
             int testPetHunger = testPet.GetHunger();
 
+
             Assert.Equal(50, testPetHunger);
+
         }
 
         [Fact]
@@ -101,7 +122,9 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetBoredom_Should_Return_Initial_Boredom_Level_Of_60()
         {
+
              int testPetBoredom = testPet.GetBoredom();
+
 
              Assert.Equal(60, testPetBoredom);
         }
@@ -111,15 +134,19 @@ namespace VirtualPet.Tests
         {
             testPet.Health = 100; 
            
+
             Assert.Equal(100, testPet.Health);
+
         }
 
         [Fact]
         public void GetHealth_Should_Return_Initial_Health_Level_Of_30()
         {
+
             int testPetHealth = testPet.GetHealth();
             
             Assert.Equal(30, testPetHealth);
+
         }
 
         [Fact]
@@ -133,33 +160,41 @@ namespace VirtualPet.Tests
         [Fact]
         public void SeeDoctor_Should_Increase_Health_By_30()
         {
+
              testPet.SeeDoctor();
 
              Assert.Equal(60, testPet.GetHealth());
+
         }
 
         [Fact]
         public void Play_Should_Increase_Hunger_By_10()
         {
+
              testPet.Play();
 
              Assert.Equal(60, testPet.GetHunger());
+
         }
 
         [Fact]
         public void Play_Should_Decrease_Boredom_By_20()
         {
+
              testPet.Play();
 
              Assert.Equal(40, testPet.GetBoredom());
+
         }
 
         [Fact]
         public void Play_Should_Increase_Health_By_10()
         {
+
              testPet.Play();
 
              Assert.Equal(40, testPet.GetHealth());
+
         }
 
         [Fact]

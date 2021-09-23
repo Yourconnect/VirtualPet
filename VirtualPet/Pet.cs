@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -22,6 +22,7 @@ namespace VirtualPet
             SetHunger(Hunger += 10);
             SetBoredom(Boredom -= 20);
             SetHealth(Health - 20);
+
 
         }
         public void Feed()
@@ -110,9 +111,6 @@ namespace VirtualPet
             SetHealth(Health -= 5);
         }
 
-
-
-
         public void GetStatus()  //Move to program.cs
         {
             Console.Clear();
@@ -122,6 +120,8 @@ namespace VirtualPet
             Console.WriteLine("Health: " + GetHealth());
 
             Console.Read();
+          
         }
+        
     }
 }
