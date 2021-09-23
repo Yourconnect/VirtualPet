@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace VirtualPet
 {
-    class Robot
+   public class Robot : Pet
     {
-
+        public void 
     }
 }
