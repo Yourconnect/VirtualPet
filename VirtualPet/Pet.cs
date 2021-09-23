@@ -86,14 +86,62 @@ namespace VirtualPet
         }
         public void FeedDecreaseHunger()
         {
-            int Hunger = 50;
-           public void Feed()
+            Hunger = 50;
+
+            int Feed()
             {
-                Hunger -= 40;
+               Hunger -= 40;
+               
+               return Feed();
             }
 
             
         }
+        public void SeeDoctor()
+        {
+            Health = 100;
 
+            int Doctor()
+            {
+                Health += 30;
+
+                return Doctor();
+            }
+
+        }
+        public void PlayIncreaseHunger()
+        {
+            Hunger = 50;
+
+            int Play()
+            {
+                Hunger += 10;
+
+                return Play();
+            }
+        }
+        public void PlayDecreaseBoredom()
+        {
+            Boredom = 50;
+
+            int Play()
+            {
+                Boredom -= 20;
+
+                return Play();
+            }
+        }
+        public void PlayIncreaseHealth()
+        {
+            Health = 100;
+
+            int Play()
+            {
+                Health += 10;
+
+                return Play();
+            }
+        }
+        
     }
 }

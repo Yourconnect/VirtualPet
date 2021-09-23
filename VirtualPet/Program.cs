@@ -18,12 +18,6 @@ namespace VirtualPet
                 Console.WriteLine("3.Adopt an animal");
                 Console.WriteLine("4.Feed an animal");
                 Console.WriteLine("5.Take an animal to the vet");
-                Console.WriteLine("6.");
-                Console.WriteLine("7.");
-                Console.WriteLine("8.");
-                Console.WriteLine("9.");
-                Console.WriteLine("10.");
-                Console.WriteLine("11.");
                 Console.WriteLine("Press Q to quit");
 
                 string userChoice = Console.ReadLine().ToLower();
