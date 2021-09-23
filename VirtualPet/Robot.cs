@@ -8,5 +8,6 @@ namespace VirtualPet
 {
     class Robot
     {
+
     }
 }
