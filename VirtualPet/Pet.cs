@@ -22,7 +22,7 @@ namespace VirtualPet
         {
             Hunger += 5;
             Boredom -= 5;
-            
+
         }
         public void Feed()
         {
@@ -40,7 +40,7 @@ namespace VirtualPet
             Console.WriteLine("Name: " + Name);
             Console.WriteLine("");
         }
-       public Pet(string name, string species)
+        public Pet(string name, string species)
         {
             Name = name;
             Species = species;
@@ -71,6 +71,77 @@ namespace VirtualPet
         public void GetStatus()
         {
             Console.WriteLine("Hunger:" + Hunger + "Boredom:" + Boredom + "Health:" + Health);
+        }    
+        public int GetHunger()
+        {
+          return Hunger;
         }
+        public int GetBoredom()
+        {
+            return Boredom;
+        }
+        public int GetHealth()
+        {
+            return Health;
+        }
+        public void FeedDecreaseHunger()
+        {
+            Hunger = 50;
+
+            int Feed()
+            {
+               Hunger -= 40;
+               
+               return Feed();
+            }
+
+            
+        }
+        public void SeeDoctor()
+        {
+            Health = 100;
+
+            int Doctor()
+            {
+                Health += 30;
+
+                return Doctor();
+            }
+
+        }
+        public void PlayIncreaseHunger()
+        {
+            Hunger = 50;
+
+            int Play()
+            {
+                Hunger += 10;
+
+                return Play();
+            }
+        }
+        public void PlayDecreaseBoredom()
+        {
+            Boredom = 50;
+
+            int Play()
+            {
+                Boredom -= 20;
+
+                return Play();
+            }
+        }
+        public void PlayIncreaseHealth()
+        {
+            Health = 100;
+
+            int Play()
+            {
+                Health += 10;
+
+                return Play();
+            }
+        }
+        
     }
 }
