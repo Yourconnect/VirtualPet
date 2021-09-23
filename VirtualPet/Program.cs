@@ -1,15 +1,23 @@
 ﻿using System;
+using System.Threading;
 
 namespace VirtualPet
 {
     class Program
     {
+        //public static Shelter MyShelter;
         public static Pet MyPet;
+        public static Timer timer;
         static void Main(string[] args)
         {
-            
+
+
+
+            //timer = new Timer(Tick, null, 0, 10000);
+
             Console.WriteLine("Welcome to the Shelter!");
             bool Menu = true;
+
 
             while (Menu)
             {
@@ -29,12 +37,16 @@ namespace VirtualPet
                 switch (menuChoice)
                 {
                     case "1":
-                        MyPet=NewPet();
-                        
+                        MyPet = NewPet();
+                        //MyShelter.AddPet(MyPet);
+                        if(timer == null)
+                        {
+                            timer = new Timer(Tick, null, 0, 2000);
+                        }
                         break;
                     case "2":
                         MyPet.GetStatus();
-                        
+
 
                         break;
                     case "3":
@@ -47,7 +59,7 @@ namespace VirtualPet
                     case "5":
 
                         break;
-                    
+
                         Menu = false;
                         Console.WriteLine("Thanks for visiting the shelter");
                         break;
@@ -55,90 +67,102 @@ namespace VirtualPet
                         break;
                 }
             }
-            
-            static Pet NewPet()
+        }
+        static Pet NewPet()
+        {
+            Console.Clear();
+            Console.WriteLine("What species is your pet?");
+            string Species = Console.ReadLine();
+            Console.WriteLine("What is the name of your pet?");
+            string Name = Console.ReadLine();
+            return new Pet(Species, Name);
+        }
+
+
+
+
+        static void AdoptPet()
+        {
+            Console.Clear();
+            Console.WriteLine("Would you like to adopt " + MyPet.Name + "?");
+            Console.WriteLine("Yes or No?");
+
+            string choice = Console.ReadLine().ToLower();
+            if (choice == "yes")
             {
-                Console.WriteLine("What species is your pet?");
-                string Species = Console.ReadLine();
-                Console.WriteLine("What is the name of your pet?");
-                string Name = Console.ReadLine();
-                return new Pet(Species, Name);
+                //MyPet.Remove();?? remove from pet list in shelter
+                Console.WriteLine("Enjoy your new pet!");
+            }
+            else if (choice == "no")
+            {
+                Console.WriteLine("Come back when you want to save a helpless animal");
+            }
+            else
+            {
+                Console.WriteLine("Please enter yes or no" );
             }
 
+            Console.Read();
 
 
+        }
 
-            static void AdoptPet()
-            {
-                Console.WriteLine("Would you like to adopt " + MyPet + "?");
-                Console.WriteLine("Yes or No?");
-
-                string choice = Console.ReadLine().ToLower();
-                if (choice == "yes")
-                {
-                    //MyPet.Remove();?? remove from pet list in shelter
-                    Console.WriteLine("Enjoy your new pet!");
-                }
-                else
-                {
-                    Console.WriteLine("Come back when you want to save a helpless animal");
-                }
-
-                Console.Read();
-                
-
-            }
-
-            static void PetInteractions()
-            {
-                Console.WriteLine("How would you like to interact with a pet today? ");
-                Console.WriteLine("Enter 1 to play with the pet \nEnter 2 to feed the pet \nEnter 3 to take the pet to the doctor");
-                int choice = Convert.ToInt32(Console.ReadLine());
+        static void PetInteractions()
+        {
+            Console.Clear();
+            Console.WriteLine("How would you like to interact with a pet today? ");
+            Console.WriteLine("Enter 1 to play with the pet \nEnter 2 to feed the pet \nEnter 3 to take the pet to the doctor");
+            int choice = Convert.ToInt32(Console.ReadLine());
 
             if (choice == 1)
             {
-                Console.WriteLine(MyPet.Name + " is " + MyPet.Boredom + "% bored");
+                Console.WriteLine(MyPet.Name + " is " + MyPet.GetBoredom() + "% bored");
 
                 MyPet.Play();
 
                 Console.WriteLine(MyPet.Name + " is playing");
-                Console.WriteLine(MyPet.Name + " is now " + MyPet.Boredom + "% bored");
-                    Console.Read();
+                Console.WriteLine(MyPet.Name + " is now " + MyPet.GetBoredom() + "% bored");
+                Console.Read();
 
             }
             else if (choice == 2)
             {
-                Console.WriteLine(MyPet.Name + " is " + MyPet.Hunger + "% hungry");
+                Console.WriteLine(MyPet.Name + " is " + MyPet.GetHunger() + "% hungry");//doggos hunger level is at 50%
 
                 MyPet.Feed();
 
                 Console.WriteLine(MyPet.Name + " is eating");
-                Console.WriteLine(MyPet.Name + " is now " + MyPet.Hunger + "% hungry");
-                    Console.Read();
+                Console.WriteLine(MyPet.Name + " is now " + MyPet.GetHunger() + "% hungry");
+                Console.Read();
 
             }
             else if (choice == 3)
             {
-                Console.WriteLine(MyPet.Name + " is " + MyPet.Health + "% healthy");
+                Console.WriteLine(MyPet.Name + " is " + MyPet.GetHealth() + "% healthy");
 
-                MyPet.Doctor();
+                MyPet.SeeDoctor();
 
                 Console.WriteLine(MyPet.Name + " is getting checked out");
-                Console.WriteLine(MyPet.Name + " is now " + MyPet.Health + "% healthy");
-                    Console.Read();
+                Console.WriteLine(MyPet.Name + " is now " + MyPet.GetHealth() + "% healthy");
+                Console.Read();
 
             }
             else
             {
                 Console.WriteLine("Please choose option 1, 2 or 3");
-                    Console.Read();
+
+                Console.Read();
             }
-
-
-               
-
-            }
-           
         }
+        public static void Tick(Object o)
+        {
+            MyPet.Tick();
+            //foreach(var pet in MyShelter.ListOfPets)
+            //{
+            //    pet.Tick();
+            //}
+        }
+
     }
 }
+
