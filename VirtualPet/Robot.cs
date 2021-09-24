@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VirtualPet
+{
+    public class Robot : Pet
+    {
+
+        public int Battery()
+        {
+            return GetHealth();
+        }
+        public void ChargeLvl()
+        {
+            Hunger += 5;
+            Boredom -= 5;
+        }
+        public void Oil()
+        {
+            Boredom += 5;
+            Hunger += 5;
+            Health += 10;
+        }
+        public void Hack()
+        {
+            Boredom -= 10;
+            Health -= 5;
+        }
+        public override void GetStatus()
+        {
+            Console.WriteLine("ChargeLvl: " + GetHunger());
+            Console.WriteLine("SleepMode: " + GetBoredom());
+            Console.WriteLine("Oil" + GetHealth());
+        }
+    } 
+}

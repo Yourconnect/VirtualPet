@@ -25,17 +25,14 @@ namespace VirtualPet
         {
             ListOfPets.Remove(o);
 
-        }
-        public Pet PetChoiceList()
-        {
-            int i = 1;
-            foreach (Pet pet in ListOfPets)
-
+            if (o.GetType()==typeof(Robot))
             {
-                Console.WriteLine(i + " " + pet.Name + " " + pet.Species);
-                i++;
+                Console.WriteLine("Robot has been scrapped");
             }
-            return PetChoiceList();
+            else if (o.GetType()==typeof(Pet))
+            {
+                Console.WriteLine("Pet has been adopted");
+            }
         }
         
     }
