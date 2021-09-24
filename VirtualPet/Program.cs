@@ -5,15 +5,12 @@ namespace VirtualPet
 {
     class Program
     {
-        //public static Shelter MyShelter;
+        public static Shelter MyShelter;
         public static Pet MyPet;
         public static Timer timer;
         static void Main(string[] args)
         {
 
-
-
-            //timer = new Timer(Tick, null, 0, 10000);
 
             Console.WriteLine("Welcome to the Shelter!");
             bool Menu = true;
@@ -48,7 +45,6 @@ namespace VirtualPet
                     case "2":
                         MyPet.GetStatus();
 
-
                         break;
                     case "3":
                         PetInteractions();
@@ -58,11 +54,11 @@ namespace VirtualPet
 
                         break;
                     case "5":
-
-                        break;
-
-                        Menu = false;
                         Console.WriteLine("Thanks for visiting the shelter");
+                        Console.WriteLine("Press any key to Exit the game");
+                        Console.Clear();
+                        Menu = false;
+
                         break;
                     default:
                         break;
@@ -86,15 +82,15 @@ namespace VirtualPet
         {
             Console.Clear();
             Console.WriteLine("Would you like to adopt " + MyPet.Name + "?");
-            Console.WriteLine("Yes or No?");
+            Console.WriteLine("Press 1 for Yes \nPress 2 for No");
 
-            string choice = Console.ReadLine().ToLower();
-            if (choice == "yes")
+            int choice = Convert.ToInt32(Console.ReadLine());
+            if (choice == 1)
             {
                 //MyPet.Remove();?? remove from pet list in shelter
                 Console.WriteLine("Enjoy your new pet!");
             }
-            else if (choice == "no")
+            else if (choice == 2)
             {
                 Console.WriteLine("Come back when you want to save a helpless animal");
             }
@@ -111,6 +107,8 @@ namespace VirtualPet
         static void PetInteractions()
         {
             Console.Clear();
+            Console.WriteLine("Choose a pet to interact with");
+            MyShelter.PetChoiceList();
             Console.WriteLine("How would you like to interact with a pet today? ");
             Console.WriteLine("Enter 1 to play with the pet \nEnter 2 to feed the pet \nEnter 3 to take the pet to the doctor");
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -128,7 +126,7 @@ namespace VirtualPet
             }
             else if (choice == 2)
             {
-                Console.WriteLine(MyPet.Name + " is " + MyPet.GetHunger() + "% hungry");//doggos hunger level is at 50%
+                Console.WriteLine(MyPet.Name + "'s hunger level is at " + MyPet.GetHunger() + "%");
 
                 MyPet.Feed();
 
@@ -157,10 +155,11 @@ namespace VirtualPet
         }
         public static void Tick(Object o)
         {
-            MyPet.Tick();
+            //MyPet.Tick();
             //foreach(var pet in MyShelter.ListOfPets)
             //{
             //    pet.Tick();
+            
             //}
         }
 
