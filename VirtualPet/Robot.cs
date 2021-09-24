@@ -8,7 +8,6 @@ namespace VirtualPet
 {
     public class Robot : Pet
     {
-
         public int Battery()
         {
             return GetHealth();
