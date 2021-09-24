@@ -24,7 +24,14 @@ namespace VirtualPet
         public void AdoptPet(Pet o)
         {
             ListOfPets.Remove(o);
-            
+            if (o.GetType()==typeof(Robot))
+            {
+                Console.WriteLine("Robot has been scrapped");
+            }
+            else if (o.GetType()==typeof(Pet))
+            {
+                Console.WriteLine("Pet has been adopted");
+            }
         }
     }
 }

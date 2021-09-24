@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualPet", "VirtualPet\Vi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualPet.Tests", "VirtualPet.Tests\VirtualPet.Tests.csproj", "{4E04F3B7-B0A6-4466-BEB5-1D7B6E21AEB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotTests", "RobotTests\RobotTests.csproj", "{0EB90CA2-2686-4295-81F0-58BCB705C45E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4E04F3B7-B0A6-4466-BEB5-1D7B6E21AEB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E04F3B7-B0A6-4466-BEB5-1D7B6E21AEB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E04F3B7-B0A6-4466-BEB5-1D7B6E21AEB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB90CA2-2686-4295-81F0-58BCB705C45E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB90CA2-2686-4295-81F0-58BCB705C45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB90CA2-2686-4295-81F0-58BCB705C45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB90CA2-2686-4295-81F0-58BCB705C45E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
