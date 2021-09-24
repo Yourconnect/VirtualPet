@@ -5,7 +5,7 @@
 ### 1.Admit a pet
 Create your new virtual pet they can be a living animal or a and admit them into the shelter!
 
-## .Interact with a pet
+## 2.Interact with a pet
 ### Interact with the pets in the shelter so no one gets bored.
 Feed a pet, play with a pet, take a sick pet to the vet.
 
