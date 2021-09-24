@@ -3,7 +3,8 @@
  
 ## Once you enter this game you are given the options to:
 ### 1.Admit a pet
-Create your new virtual pet they can be a living animal or a and admit them into the shelter!
+Create your new virtual pet. They can be a living animal or a Robot pet!
+Then admit them into the shelter!
 
 ## 2.Interact with a pet
 ### Interact with the pets in the shelter so no one gets bored.
@@ -14,7 +15,7 @@ Feed a pet, play with a pet, take a sick pet to the vet.
 Happy, or bored?
 
 ## 4.Adopt a pet
-### Have you or some one else fallen in love with a one of our fury friends? 
+### Have you or some one else fallen in love with one of our fury friends? 
 Then consider adopting!
 
 ## 5.Leave the shelter
