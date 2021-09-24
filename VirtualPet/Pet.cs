@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,46 +6,57 @@ namespace VirtualPet
 {
     public class Pet
     {
+        private const int MAXHEALTH = 100;
+        private const int MAXHUNGER = 100;
+        private const int MAXBOREDOM = 100;
 
         public string Name { get; set; }
         public string Species { get; set; }
-        public int Hunger { get; set; }
-        public int Boredom { get; set; }
-        public int Health { get; set; }
+        public int Hunger;
+        public int Boredom;
+        public int Health;
 
-        //public int Feed { get; set; }  Not property Should be method
-        //public int SeeDoctor { get; set; }
-        //public int Play { get; set; }
 
         public void Play()
         {
-            Hunger += 5;
-            Boredom -= 5;
+            SetHunger(Hunger += 10);
+            SetBoredom(Boredom -= 20);
+            SetHealth(Health - 20);
+
 
         }
         public void Feed()
         {
-            Hunger -= 5;
-            Health += 10;
+            SetHunger(Hunger -= 40);
+            SetHealth(Health += 10);
         }
-        public void Doctor()
+        public void SeeDoctor()
         {
-            Hunger = 50;
-            Boredom = 50;
-            Health = 100;
+
+            SetHealth(Health += 30);
+            //Does this effect anything else
+
         }
         public void Print()
         {
             Console.WriteLine("Name: " + Name);
             Console.WriteLine("");
         }
-        public Pet(string name, string species)
+        public Pet(string species, string name)
         {
             Name = name;
             Species = species;
             Hunger = 50;
-            Boredom = 50;
-            Health = 100;
+            Boredom = 60;
+            Health = 30;
+
+        }
+
+        public Pet()
+        {
+            Hunger = 50;
+            Boredom = 60;
+            Health = 30;
         }
 
         public void SetName(string name)
@@ -67,79 +78,49 @@ namespace VirtualPet
         {
             return Species;
         }
-        public void GetStatus()
-        {
-            Console.WriteLine("Hunger:" + Hunger + "Boredom:" + Boredom + "Health:" + Health);
-        }    
+
         public int GetHunger()
         {
-          return Hunger;
-        }
-        public int GetBoredom()
-        {
-            return Boredom;
+            return this.Hunger;
         }
         public int GetHealth()
         {
-            return Health;
+            return this.Health;
         }
-        public void FeedDecreaseHunger()
+        public int GetBoredom()
         {
-            Hunger = 50;
-
-            int Feed()
-            {
-               Hunger -= 40;
-               
-               return Feed();
-            }
-
-            
+            return this.Boredom;
         }
-        public void SeeDoctor()
+        public void SetHealth(int health)
         {
-            Health = 100;
-
-            int Doctor()
-            {
-                Health += 30;
-
-                return Doctor();
-            }
-
+            this.Health = Math.Max(0, Math.Min(MAXHEALTH, health));
         }
-        public void PlayIncreaseHunger()
+        public void SetHunger(int hunger)
         {
-            Hunger = 50;
-
-            int Play()
-            {
-                Hunger += 10;
-
-                return Play();
-            }
+            this.Hunger = Math.Max(0, Math.Min(MAXHUNGER, hunger));
         }
-        public void PlayDecreaseBoredom()
+        public void SetBoredom(int boredom)
         {
-            Boredom = 50;
-
-            int Play()
-            {
-                Boredom -= 20;
-
-                return Play();
-            }
+            this.Boredom = Math.Max(0, Math.Min(MAXBOREDOM, boredom));
         }
-        public void PlayIncreaseHealth()
+
+        public void Tick()
         {
-            Health = 100;
+            SetHunger(Hunger += 5);
+            SetBoredom(Boredom += 5);
+            SetHealth(Health -= 5);
+        }
 
-            int Play()
-            {
-                Health += 10;
+        public void GetStatus()  //Move to program.cs
+        {
+            Console.Clear();
+            //Console.WriteLine(MyPet.Name + "'s current status:");
+            Console.WriteLine("Hunger: " + GetHunger());
+            Console.WriteLine("Boredom: " + GetBoredom());
+            Console.WriteLine("Health: " + GetHealth());
 
-                return Play();
-            }
+            Console.Read();
+          
         }
         
     }
