@@ -6,22 +6,34 @@ using System.Threading.Tasks;
 
 namespace VirtualPet
 {
-   public class Robot : Pet
+    public class Robot : Pet
     {
-        public void Fly()
+
+        public int Battery()
+        {
+            return GetHealth();
+        }
+        public void ChargeLvl()
         {
             Hunger += 5;
             Boredom -= 5;
         }
-        public void Transform()
+        public void Oil()
         {
-            Boredom -= 10;
+            Boredom += 5;
             Hunger += 5;
+            Health += 10;
         }
         public void Hack()
         {
             Boredom -= 10;
-            Hunger += 5;
+            Health -= 5;
+        }
+        public override void GetStatus()
+        {
+            Console.WriteLine("ChargeLvl: " + GetHunger());
+            Console.WriteLine("SleepMode: " + GetBoredom());
+            Console.WriteLine("Oil" + GetHealth());
         }
     } 
 }
