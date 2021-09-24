@@ -111,7 +111,7 @@ namespace VirtualPet
             SetHealth(Health -= 5);
         }
 
-        public void GetStatus()  //Move to program.cs
+        public virtual void GetStatus()  //Move to program.cs
         {
             Console.Clear();
             //Console.WriteLine(MyPet.Name + "'s current status:");
