@@ -11,15 +11,18 @@
  Interact with the pets in the shelter, so no one gets bored.
  Feed a pet, play with a pet, take a sick pet to the vet.
 
-### 3.Check status of a pet
- Are your pets hungry, or sick :(
- Happy, or bored?
+ ### 3.Interact with multiple pets
+ Chose more than one pet
 
-### 4.Adopt a pet
+### 4. Adopt a pet
  Have you or some one else fallen in love with one of our fury friends? 
  Then consider adopting!
 
-### 5.Leave the shelter
+### 5. Check status of a pet
+ Are your pets hungry, or sick :(
+ Happy, or bored?
+
+### 6.Leave the shelter
  Exit the game come back any time!
 
 ### **How to play**
